@@ -32,6 +32,33 @@
     - system
     - configuration
 
+- name: Configuration - NetworkManager
+  become: yes
+  copy:
+    src: ../files/networkmanager.conf
+    dest: /etc/NetworkManager/conf.d/dns.conf
+    mode: 0644
+  tags:
+    - system
+    - configuration
+
+- name: Configuration - dnsmasq
+  become: yes
+  copy:
+    src: ../files/dnsmasq.conf
+    dest: /etc/NetworkManager/dnsmasq.d/dns.conf
+    mode: 0644
+  tags:
+    - system
+    - configuration
+
+- name: Configuration - Restart NetworkManager
+  become: yes
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: NetworkManager
+
 - name: Configuration - NordNM directory
   become: yes
   become_user: '{{ user_name }}'
