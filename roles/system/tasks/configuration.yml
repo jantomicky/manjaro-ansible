@@ -93,6 +93,29 @@
     - system
     - configuration
 
+- name: Configuration - Caprine
+  become_user: "{{ user_name }}"
+  become: yes
+  lineinfile:
+    dest: /home/{{ user_name }}/.config/Caprine/config.json
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+  with_items:
+    - { regexp: '"followSystemAppearance":', line: '"followSystemAppearance": true,' }
+    - { regexp: '"darkMode":', line: '"darkMode": true,' }
+    - { regexp: '"zoomFactor":', line: '"zoomFactor": 1.2,' }
+    - { regexp: '"showTrayIcon":', line: '"showTrayIcon": true,' }
+    - { regexp: '"flashWindowOnMessage":', line: '"flashWindowOnMessage": true,' }
+    - { regexp: '"notificationMessagePreview":', line: '"notificationMessagePreview": true,' }
+    - { regexp: '"hardwareAcceleration":', line: '"hardwareAcceleration": true,' }
+    - { regexp: '"quitOnWindowClose":', line: '"quitOnWindowClose": false,' }
+    - { regexp: '"keepMeSignedIn":', line: '"keepMeSignedIn": true,' }
+    - { regexp: '"autoplayVideos":', line: '"autoplayVideos": false,' }
+    - { regexp: '"isSpellCheckerEnabled":', line: '"isSpellCheckerEnabled": false,' }
+  tags:
+    - system
+    - configuration
+
 - name: Configuration - Gestures
   become_user: "{{ user_name }}"
   become: yes
