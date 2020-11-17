@@ -1,5 +1,5 @@
 ---
-- name: Install system packages
+- name: System - Install system packages
   become: yes
   pacman:
     name: "{{ packages_present }}"
@@ -7,7 +7,7 @@
   tags:
     - system
 
-- name: Remove system packages
+- name: System - Remove system packages
   become: yes
   pacman:
     name: "{{ packages_absent }}"
@@ -16,10 +16,11 @@
   tags:
     - system
 
-- name: Install Vagrant plugins
+- name: System - Install Vagrant plugins
   become_user: "{{ user_name }}"
   become: yes
   shell: /usr/bin/vagrant plugin install {{ item }}
   loop: "{{ vagrant_plugins }}"
 
+- include: desktop.yml
 - include: configuration.yml

@@ -1,0 +1,9 @@
+- name: System - Remove TLP
+  become: yes
+  pacman:
+    name: "tlp"
+    state: absent
+    extra_args: --recursive
+  tags:
+    - system
+    - desktop
