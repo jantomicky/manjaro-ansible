@@ -1,17 +1,4 @@
 ---
-- name: Configuration - Git
-  become_user: "{{ user_name }}"
-  become: yes
-  copy:
-    src: ../files/.gitconfig
-    dest: /home/{{ user_name }}/.gitconfig
-    owner: '{{ user_name }}'
-    group: '{{ user_name }}'
-    mode: 0644
-  tags:
-    - system
-    - configuration
-
 - name: Configuration - Pacman
   become: yes
   lineinfile:
@@ -69,6 +56,19 @@
     state: restarted
     daemon_reload: yes
     name: NetworkManager
+
+- name: Configuration - Git
+  become_user: "{{ user_name }}"
+  become: yes
+  copy:
+    src: ../files/.gitconfig
+    dest: /home/{{ user_name }}/.gitconfig
+    owner: '{{ user_name }}'
+    group: '{{ user_name }}'
+    mode: 0644
+  tags:
+    - system
+    - configuration
 
 - name: Configuration - NordNM directory
   become: yes
