@@ -32,6 +32,17 @@
     - system
     - configuration
 
+- name: Configuration - Keychron keyboard(s)
+  become: yes
+  copy:
+    src: ../files/keychron.conf
+    dest: /etc/modprobe.d/hid_apple.conf
+    mode: 0644
+  tags:
+    - system
+    - configuration
+    - desktop
+
 - name: Configuration - NetworkManager
   become: yes
   copy:
