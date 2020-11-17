@@ -1,0 +1,40 @@
+---
+- name: "Night light - Enable"
+  become_user: '{{ user_name }}'
+  become: yes
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/color/night-light-enabled"
+    value: "true"
+    state: present
+  tags:
+    - gnome
+
+- name: "Night light - Set coordinates"
+  become_user: '{{ user_name }}'
+  become: yes
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/color/night-light-last-coordinates"
+    value: "'(49.5969, 17.2484)'"
+    state: present
+  tags:
+    - gnome
+
+- name: "Night light - Set automatic schedule"
+  become_user: '{{ user_name }}'
+  become: yes
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/color/night-light-schedule-automatic"
+    value: "true"
+    state: present
+  tags:
+    - gnome
+
+- name: "Night light - Set temperature"
+  become_user: '{{ user_name }}'
+  become: yes
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/color/night-light-temperature"
+    value: "uint32 2700"
+    state: present
+  tags:
+    - gnome

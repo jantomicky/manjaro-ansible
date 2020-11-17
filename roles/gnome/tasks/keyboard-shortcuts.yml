@@ -1,0 +1,67 @@
+---
+- name: "Keyboard shortcuts - Define custom keybindings"
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
+    value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
+    state: present
+  tags:
+    - gnome
+    - keyboard-shortcuts
+
+- name: "keyboard Shortcuts - Terminal name"
+  become_user: '{{ user_name }}'
+  become: yes
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name"
+    value: "'Terminál'"
+    state: present
+  tags:
+    - gnome
+    - keyboard-shortcuts
+
+- name: "Keyboard shortcuts - Terminal keybinding"
+  become_user: '{{ user_name }}'
+  become: yes
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding"
+    value: "'<Super>Return'"
+    state: present
+  tags:
+    - gnome
+    - keyboard-shortcuts
+
+- name: "Keyboard shortcuts - Terminal command"
+  become_user: '{{ user_name }}'
+  become: yes
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command"
+    value: "'/usr/bin/gnome-terminal'"
+    state: present
+  tags:
+    - gnome
+    - keyboard-shortcuts
+
+- name: "Keyboard shortcuts - Close window"
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/close"
+    value: "['<Super>q']"
+    state: present
+  tags:
+    - gnome
+    - keyboard-shortcuts
+
+- name: "Keyboard shortcuts - Toggle on-screen keyboard"
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/settings-daemon/plugins/media-keys/on-screen-keyboard"
+    value: "['<Super>k']"
+    state: present
+  tags:
+    - gnome
+    - keyboard-shortcuts
+    - laptop

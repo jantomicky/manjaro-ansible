@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  gather_facts: no
+  roles:
+    - { role: system, tags: ["system"] }
+    - { role: applications, tags: ["applications"] }
+    - { role: gnome, tags: ["gnome"] }

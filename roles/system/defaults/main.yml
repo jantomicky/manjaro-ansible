@@ -1,0 +1,31 @@
+packages_present:
+  - yay
+  - php
+  - timeshift
+  - deja-dup
+  - gvim
+  - htop
+  - neofetch
+  - dnsmasq
+  - base-devel
+  - ttf-fira-code
+  - adwaita-maia
+  - wallpapers-juhraya
+
+packages_absent:
+  - manjaro-ranger-settings
+  - manjaro-documentation-en
+  - manjaro-dynamic-wallpaper
+  - manjaro-printer
+  - gnome-layout-switcher
+  - alacarte
+  - bmenu
+  - gparted
+  - ranger
+  - pamac-snap-plugin
+  - pamac-flatpak-plugin
+  - wallpapers-2018
+
+vagrant_plugins:
+  - vagrant-bindfs
+  - vagrant-disksize

@@ -1,0 +1,13 @@
+---
+- name: Configuration - .gitconfig
+  become_user: "{{ user_name }}"
+  become: yes
+  copy:
+    src: ../files/.gitconfig
+    dest: /home/{{ user_name }}/.gitconfig
+    owner: '{{ user_name }}'
+    group: '{{ user_name }}'
+    mode: 0644
+  tags:
+    - system
+    - configuration

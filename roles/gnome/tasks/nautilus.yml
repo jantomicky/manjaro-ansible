@@ -1,0 +1,44 @@
+---
+- name: "Nautilus - Set list view zoom level"
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/nautilus/list-view/default-zoom-level"
+    value: "'small'"
+    state: present
+  tags:
+    - gnome
+    - nautilus
+
+- name: "Nautilus - Set default folder view"
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/nautilus/preferences/default-folder-viewer"
+    value: "'list-view'"
+    state: present
+  tags:
+    - gnome
+    - nautilus
+
+- name: "Nautilus - Set default folder view"
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/nautilus/preferences/search-filter-time-type"
+    value: "'last_modified'"
+    state: present
+  tags:
+    - gnome
+    - nautilus
+
+- name: "Nautilus - Set default search view"
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/nautilus/preferences/search-view"
+    value: "'list-view'"
+    state: present
+  tags:
+    - gnome
+    - nautilus

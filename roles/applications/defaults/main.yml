@@ -1,0 +1,31 @@
+applications_present:
+  - firefox
+  - bitwarden
+  - caprine
+  - evolution
+  - virtualbox
+  - vagrant
+  - docker
+  - docker-compose
+  - gitg
+  - dbeaver
+  - gthumb
+  - gimp
+  - drawing
+  - evince
+  - inkscape
+  - lollypop
+  - steam-manjaro
+  - libreoffice-still
+
+applications_absent:
+  - geary
+  - glade
+  - transmission-gtk
+
+applications_aur:
+  - visual-studio-code-bin
+  - nordnm
+  - insomnia-bin
+  - flexibee
+  - ledger-live-bin

@@ -1,0 +1,8 @@
+[user]
+    name = Jan Tomický
+    email = jan@tomicky.cz
+[alias]
+    tree = log --graph --oneline --all
+    branches = branch -va
+[pull]
+    ff = only

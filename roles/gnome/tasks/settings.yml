@@ -1,0 +1,104 @@
+---
+- name: "Settings - Add weather location"
+  become_user: '{{ user_name }}'
+  become: yes
+  dconf:
+    key: "/org/gnome/Weather/locations"
+    value: "[<(uint32 2, <('Olomouc', '', false, [(0.86557957883575365, 0.30108924508237211)], [(0.86102909183277176, 0.30688705432457208)])>)>]"
+    state: present
+  tags:
+    - gnome
+    - settings
+
+- name: "Settings - Disable weather automatic location"
+  become_user: '{{ user_name }}'
+  become: yes
+  dconf:
+    key: "/org/gnome/Weather/automatic-location"
+    value: "false"
+    state: present
+  tags:
+    - gnome
+    - settings
+
+- name: "Settings - Show clock weekday"
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/desktop/interface/clock-show-weekday"
+    value: "true"
+    state: present
+  tags:
+    - gnome
+    - settings
+
+- name: "Settings - Disable hot corner"
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/desktop/interface/enable-hot-corners"
+    value: "false"
+    state: present
+  tags:
+    - gnome
+    - settings
+
+- name: "Settings - Set cursor theme"
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/desktop/interface/cursor-theme"
+    value: "'Adwaita'"
+    state: present
+  tags:
+    - gnome
+    - settings
+    - themes
+
+- name: "Settings - Set GTK theme"
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/desktop/interface/gtk-theme"
+    value: "'Adwaita-maia-dark'"
+    state: present
+  tags:
+    - gnome
+    - settings
+    - themes
+
+- name: "Settings - Set icon theme"
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/desktop/interface/icon-theme"
+    value: "'Papirus-Dark-Maia'"
+    state: present
+  tags:
+    - gnome
+    - settings
+    - themes
+
+- name: "Settings - Set screensaver"
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/desktop/screensaver/picture-uri"
+    value: "'file:///usr/share/backgrounds/wallpapers-juhraya/Austria_by_Rutger_Heijmerikx.jpg'"
+    state: present
+  tags:
+    - gnome
+    - settings
+    - themes
+
+- name: "Settings - Set desktop background"
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/desktop/background"
+    value: "'file:///usr/share/backgrounds/wallpapers-juhraya/Austria_by_Rutger_Heijmerikx.jpg'"
+    state: present
+  tags:
+    - gnome
+    - settings
+    - themes

@@ -1,0 +1,11 @@
+---
+- name: "Extensions - Enable"
+  become_user: '{{ user_name }}'
+  become: yes
+  dconf:
+    key: "/org/gnome/shell/enabled-extensions"
+    value: "['user-theme@gnome-shell-extensions.gcampax.github.com', 'appindicatorsupport@rgcjonas.gmail.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'pamac-updates@manjaro.org']"
+    state: present
+  tags:
+    - gnome
+    - extensions

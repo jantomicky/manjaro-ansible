@@ -1,0 +1,15 @@
+---
+- name: Install GNOME Tweaks
+  become: yes
+  pacman:
+    name: "gnome-tweaks"
+    state: present
+  tags:
+    - gnome
+
+- include: keyboard-shortcuts.yml
+- include: extensions.yml
+- include: settings.yml
+- include: terminal.yml
+- include: nautilus.yml
+- include: night-light.yml

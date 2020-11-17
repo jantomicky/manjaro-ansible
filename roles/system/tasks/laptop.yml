@@ -1,0 +1,9 @@
+---
+- name: Install gestures
+  become: yes
+  pacman:
+    name: "gestures"
+    state: present
+  tags:
+    - system
+    - laptop

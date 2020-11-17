@@ -1,0 +1,142 @@
+---
+- name: "Terminal - Set tabs position to bottom"
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/terminal/legacy/tab-position"
+    value: "'bottom'"
+    state: present
+  tags:
+    - gnome
+    - terminal
+
+- name: "Terminal - Set theme to dark"
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/terminal/legacy/theme-variant"
+    value: "'dark'"
+    state: present
+  tags:
+    - gnome
+    - terminal
+
+- name: Terminal - Set default profile name
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/visible-name"
+    value: "'Default'"
+  tags:
+    - gnome
+    - terminal
+
+- name: Terminal - Set custom profile name
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:3000e90c-e788-490c-adca-c30f7c9e49dc/visible-name"
+    value: "'Custom'"
+  tags:
+    - gnome
+    - terminal
+
+- name: Terminal - Turn off audible bell
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:3000e90c-e788-490c-adca-c30f7c9e49dc/audible-bell"
+    value: "false"
+  tags:
+    - gnome
+    - terminal
+
+- name: Terminal - Set bright colors for bold fonts
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:3000e90c-e788-490c-adca-c30f7c9e49dc/bold-is-bright"
+    value: "true"
+  tags:
+    - gnome
+    - terminal
+
+- name: Terminal - Set default columns size
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:3000e90c-e788-490c-adca-c30f7c9e49dc/default-size-columns"
+    value: "92"
+  tags:
+    - gnome
+    - terminal
+
+- name: Terminal - Set default rows size
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:3000e90c-e788-490c-adca-c30f7c9e49dc/default-size-rows"
+    value: "28"
+  tags:
+    - gnome
+    - terminal
+
+- name: Terminal - Set custom font
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:3000e90c-e788-490c-adca-c30f7c9e49dc/font"
+    value: "'Monospace 12'"
+  tags:
+    - gnome
+    - terminal
+
+- name: Terminal - Turn off system font use
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:3000e90c-e788-490c-adca-c30f7c9e49dc/use-system-font"
+    value: "false"
+  tags:
+    - gnome
+    - terminal
+
+- name: Terminal - Turn off scrollbars
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:3000e90c-e788-490c-adca-c30f7c9e49dc/scrollbar-policy"
+    value: "'never'"
+  tags:
+    - gnome
+    - terminal
+
+- name: Terminal - Set theme colors usage
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/:3000e90c-e788-490c-adca-c30f7c9e49dc/use-theme-colors"
+    value: "true"
+  tags:
+    - gnome
+    - terminal
+
+- name: Terminal - List the available profiles
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/list"
+    value: "['b1dcc9dd-5262-4d8d-a863-c897e6d979b9','3000e90c-e788-490c-adca-c30f7c9e49dc']"
+  tags:
+    - gnome
+    - terminal
+
+- name: Terminal - Set the custom profile as the default one
+  become_user: "{{ user_name }}"
+  become: yes
+  dconf:
+    key: "/org/gnome/terminal/legacy/profiles:/default"
+    value: "'3000e90c-e788-490c-adca-c30f7c9e49dc'"
+  tags:
+    - gnome
+    - terminal
