@@ -7,7 +7,7 @@
   tags:
     - applications
 
-- name: Remove unwanted applications
+- name: Remove applications
   become: yes
   pacman:
     name: "{{ applications_absent }}"
@@ -23,3 +23,6 @@
   tags:
     - applications
     - aur
+
+- include: laptop.yml
+- include: configuration.yml

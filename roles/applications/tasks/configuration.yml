@@ -1,0 +1,82 @@
+---
+- name: Configuration - Git
+  become_user: "{{ user_name }}"
+  become: yes
+  copy:
+    src: ../files/.gitconfig
+    dest: /home/{{ user_name }}/.gitconfig
+    owner: '{{ user_name }}'
+    group: '{{ user_name }}'
+    mode: 0644
+  tags:
+    - applications
+    - configuration
+
+- name: Configuration - NordNM directory
+  become: yes
+  become_user: '{{ user_name }}'
+  file:
+    path: /home/{{ user_name }}/.nordnm
+    state: directory
+  tags:
+    - applications
+    - configuration
+
+- name: Configuration - NordNM
+  become: yes
+  become_user: '{{ user_name }}'
+  copy:
+    src: ../files/nordnm-settings.conf
+    dest: /home/{{ user_name }}/.nordnm/settings.conf
+    owner: '{{ user_name }}'
+    group: '{{ user_name }}'
+    mode: 0644
+  tags:
+    - applications
+    - configuration
+
+- name: Configuration - Caprine
+  become_user: "{{ user_name }}"
+  become: yes
+  lineinfile:
+    dest: /home/{{ user_name }}/.config/Caprine/config.json
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+  with_items:
+    - { regexp: '"followSystemAppearance":', line: '"followSystemAppearance": true,' }
+    - { regexp: '"darkMode":', line: '"darkMode": true,' }
+    - { regexp: '"zoomFactor":', line: '"zoomFactor": 1.2,' }
+    - { regexp: '"showTrayIcon":', line: '"showTrayIcon": true,' }
+    - { regexp: '"flashWindowOnMessage":', line: '"flashWindowOnMessage": true,' }
+    - { regexp: '"notificationMessagePreview":', line: '"notificationMessagePreview": true,' }
+    - { regexp: '"hardwareAcceleration":', line: '"hardwareAcceleration": true,' }
+    - { regexp: '"quitOnWindowClose":', line: '"quitOnWindowClose": false,' }
+    - { regexp: '"keepMeSignedIn":', line: '"keepMeSignedIn": true,' }
+    - { regexp: '"autoplayVideos":', line: '"autoplayVideos": false,' }
+    - { regexp: '"isSpellCheckerEnabled":', line: '"isSpellCheckerEnabled": false,' }
+  tags:
+    - applications
+    - configuration
+
+- name: Configuration - Gestures
+  become_user: "{{ user_name }}"
+  become: yes
+  copy:
+    src: ../files/libinput-gestures.conf
+    dest: /home/{{ user_name }}/.config/libinput-gestures.conf
+    owner: '{{ user_name }}'
+    group: '{{ user_name }}'
+    mode: 0644
+  tags:
+    - applications
+    - configuration
+    - laptop
+
+- name: Configuration - Reload Gestures
+  become_user: "{{ user_name }}"
+  become: yes
+  shell: libinput-gestures-setup restart
+  tags:
+    - applications
+    - configuration
+    - laptop

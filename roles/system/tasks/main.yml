@@ -7,21 +7,12 @@
   tags:
     - system
 
-- name: Remove unwanted system packages
+- name: Remove system packages
   become: yes
   pacman:
     name: "{{ packages_absent }}"
     state: absent
     extra_args: --recursive
-  tags:
-    - system
-
-- name: Allow UDP for NFS
-  become: yes
-  lineinfile:
-    dest: /etc/nfs.conf
-    regexp: "udp="
-    line: "udp=y"
   tags:
     - system
 
@@ -32,4 +23,3 @@
   loop: "{{ vagrant_plugins }}"
 
 - include: configuration.yml
-- include: laptop.yml

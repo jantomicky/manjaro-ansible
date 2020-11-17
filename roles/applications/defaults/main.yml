@@ -12,11 +12,11 @@ applications_present:
   - gthumb
   - gimp
   - drawing
-  - evince
   - inkscape
+  - evince
+  - libreoffice-still
   - lollypop
   - steam-manjaro
-  - libreoffice-still
 
 applications_absent:
   - geary

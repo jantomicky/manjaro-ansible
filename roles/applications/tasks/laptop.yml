@@ -5,5 +5,5 @@
     name: "gestures"
     state: present
   tags:
-    - system
+    - applications
     - laptop
