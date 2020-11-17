@@ -1,5 +1,5 @@
 ---
-- name: Install applications
+- name: Applications - Install applications
   become: yes
   pacman:
     name: "{{ applications_present }}"
@@ -7,7 +7,7 @@
   tags:
     - applications
 
-- name: Remove applications
+- name: Applications - Remove applications
   become: yes
   pacman:
     name: "{{ applications_absent }}"
@@ -16,7 +16,7 @@
   tags:
     - applications
 
-- name: Install applications from the AUR
+- name: Applications - Install applications from the AUR
   become_user: "{{ user_name }}"
   become: yes
   shell: /usr/bin/yay -S --noconfirm {{ applications_aur | join(' ') }}

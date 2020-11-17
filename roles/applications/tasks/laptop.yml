@@ -1,5 +1,5 @@
 ---
-- name: Install gestures
+- name: Applications - Install Gestures
   become: yes
   pacman:
     name: "gestures"
