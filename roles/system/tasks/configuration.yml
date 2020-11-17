@@ -32,6 +32,29 @@
     - system
     - configuration
 
+- name: Configuration - NordNM directory
+  become: yes
+  become_user: '{{ user_name }}'
+  file:
+    path: /home/{{ user_name }}/.nordnm
+    state: directory
+  tags:
+    - system
+    - configuration
+
+- name: Configuration - NordNM
+  become: yes
+  become_user: '{{ user_name }}'
+  copy:
+    src: ../files/nordnm-settings.conf
+    dest: /home/{{ user_name }}/.nordnm/settings.conf
+    owner: '{{ user_name }}'
+    group: '{{ user_name }}'
+    mode: 0644
+  tags:
+    - system
+    - configuration
+
 - name: Configuration - Gestures
   become_user: "{{ user_name }}"
   become: yes
