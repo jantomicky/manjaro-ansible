@@ -1,5 +1,5 @@
 ---
-- name: Configuration - .gitconfig
+- name: Configuration - Git
   become_user: "{{ user_name }}"
   become: yes
   copy:
@@ -11,3 +11,17 @@
   tags:
     - system
     - configuration
+
+- name: Configuration - Gestures
+  become_user: "{{ user_name }}"
+  become: yes
+  copy:
+    src: ../files/libinput-gestures.conf
+    dest: /home/{{ user_name }}/.config/libinput-gestures.conf
+    owner: '{{ user_name }}'
+    group: '{{ user_name }}'
+    mode: 0644
+  tags:
+    - system
+    - configuration
+    - laptop
