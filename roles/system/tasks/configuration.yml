@@ -12,6 +12,26 @@
     - system
     - configuration
 
+- name: Configuration - Pacman
+  become: yes
+  lineinfile:
+    dest: /etc/pacman.conf
+    regexp: "#Color"
+    line: "Color"
+  tags:
+    - system
+    - configuration
+
+- name: Configuration - Pamac
+  become: yes
+  lineinfile:
+    dest: /etc/pamac.conf
+    regexp: "#EnableAUR"
+    line: "EnableAUR"
+  tags:
+    - system
+    - configuration
+
 - name: Configuration - Gestures
   become_user: "{{ user_name }}"
   become: yes
