@@ -25,3 +25,12 @@
     - system
     - configuration
     - laptop
+
+- name: Configuration - Reload Gestures
+  become_user: "{{ user_name }}"
+  become: yes
+  shell: libinput-gestures-setup restart
+  tags:
+    - system
+    - configuration
+    - laptop
