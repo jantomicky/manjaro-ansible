@@ -22,6 +22,14 @@
     - applications
     - configuration
 
+- name: Configuration - NordNM credentials permissions
+  file:
+    state: touch
+    path: /home/{{ user_name }}/.nordnm/credentials.conf
+    owner: '{{ user_name }}'
+    group: 'root'
+    mode: '0640'
+
 - name: Configuration - NordNM
   become: yes
   become_user: '{{ user_name }}'
@@ -54,6 +62,17 @@
     - { regexp: '"keepMeSignedIn":', line: '"keepMeSignedIn": true,' }
     - { regexp: '"autoplayVideos":', line: '"autoplayVideos": false,' }
     - { regexp: '"isSpellCheckerEnabled":', line: '"isSpellCheckerEnabled": false,' }
+  tags:
+    - applications
+    - configuration
+
+- name: Configuration - Editor
+  become_user: "{{ user_name }}"
+  become: yes
+  lineinfile:
+    dest: /home/{{ user_name }}/.profile
+    regexp: "export EDITOR="
+    line: "export EDITOR=/usr/bin/vim"
   tags:
     - applications
     - configuration
