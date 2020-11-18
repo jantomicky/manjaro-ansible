@@ -4,6 +4,8 @@ applications_present:
   - caprine
   - evolution
   - virtualbox
+  - linux58-virtualbox-host-modules
+  - linux58-virtualbox-guest-modules
   - vagrant
   - docker
   - docker-compose
