@@ -58,7 +58,7 @@
     - { regexp: '"flashWindowOnMessage":', line: '"flashWindowOnMessage": true,' }
     - { regexp: '"notificationMessagePreview":', line: '"notificationMessagePreview": true,' }
     - { regexp: '"hardwareAcceleration":', line: '"hardwareAcceleration": true,' }
-    - { regexp: '"quitOnWindowClose":', line: '"quitOnWindowClose": false,' }
+    - { regexp: '"quitOnWindowClose":', line: '"quitOnWindowClose": true,' }
     - { regexp: '"keepMeSignedIn":', line: '"keepMeSignedIn": true,' }
     - { regexp: '"autoplayVideos":', line: '"autoplayVideos": false,' }
     - { regexp: '"isSpellCheckerEnabled":', line: '"isSpellCheckerEnabled": false,' }
