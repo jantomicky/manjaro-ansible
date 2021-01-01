@@ -1,4 +1,48 @@
 ---
+- name: "Settings - Font (interface)"
+  become_user: '{{ user_name }}'
+  become: yes
+  dconf:
+    key: "/org/gnome/desktop/interface/font-name"
+    value: "Cantarell 12"
+    state: present
+  tags:
+    - gnome
+    - settings
+
+- name: "Settings - Font (document)"
+  become_user: '{{ user_name }}'
+  become: yes
+  dconf:
+    key: "/org/gnome/desktop/interface/document-font-name"
+    value: "Cantarell 12"
+    state: present
+  tags:
+    - gnome
+    - settings
+
+- name: "Settings - Font (monospace)"
+  become_user: '{{ user_name }}'
+  become: yes
+  dconf:
+    key: "/org/gnome/desktop/interface/monospace-font-name"
+    value: "Monospace 12"
+    state: present
+  tags:
+    - gnome
+    - settings
+
+- name: "Settings - Font (window title bar)"
+  become_user: '{{ user_name }}'
+  become: yes
+  dconf:
+    key: "/org/gnome/desktop/wm/preferences/titlebar-font"
+    value: "Cantarell Bold 12"
+    state: present
+  tags:
+    - gnome
+    - settings
+
 - name: "Settings - Add weather location"
   become_user: '{{ user_name }}'
   become: yes
