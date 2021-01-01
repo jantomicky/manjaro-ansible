@@ -123,12 +123,23 @@
     - settings
     - themes
 
+- name: Settings - Copy background image
+  become: yes
+  copy:
+    src: ../files/backgrounds
+    dest: /usr/share/backgrounds
+    mode: 0644
+  tags:
+    - gnome
+    - settings
+    - themes
+
 - name: "Settings - Set screensaver"
   become_user: "{{ user_name }}"
   become: yes
   dconf:
     key: "/org/gnome/desktop/screensaver/picture-uri"
-    value: "'file:///usr/share/backgrounds/wallpapers-juhraya/Austria_by_Rutger_Heijmerikx.jpg'"
+    value: "'file:///usr/share/backgrounds/Nathan_Anderson_Mountain.jpg'"
     state: present
   tags:
     - gnome
@@ -140,7 +151,7 @@
   become: yes
   dconf:
     key: "/org/gnome/desktop/background"
-    value: "'file:///usr/share/backgrounds/wallpapers-juhraya/Austria_by_Rutger_Heijmerikx.jpg'"
+    value: "'file:///usr/share/backgrounds/Nathan_Anderson_Mountain.jpg'"
     state: present
   tags:
     - gnome

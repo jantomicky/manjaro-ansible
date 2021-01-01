@@ -24,3 +24,6 @@ sudo nordnm update --credentials && sudo nordnm sync -a cz normal udp
 ```
 reboot
 ```
+
+## Shoutouts
+- https://unsplash.com/@nathananderson & https://unsplash.com/@heijmerikx (Backgrounds)
