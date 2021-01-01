@@ -4,7 +4,7 @@
   become: yes
   dconf:
     key: "/org/gnome/desktop/interface/font-name"
-    value: "Cantarell 12"
+    value: "'Cantarell 12'"
     state: present
   tags:
     - gnome
@@ -15,7 +15,7 @@
   become: yes
   dconf:
     key: "/org/gnome/desktop/interface/document-font-name"
-    value: "Cantarell 12"
+    value: "'Cantarell 12'"
     state: present
   tags:
     - gnome
@@ -26,7 +26,7 @@
   become: yes
   dconf:
     key: "/org/gnome/desktop/interface/monospace-font-name"
-    value: "Monospace 12"
+    value: "'Monospace 12'"
     state: present
   tags:
     - gnome
@@ -37,7 +37,7 @@
   become: yes
   dconf:
     key: "/org/gnome/desktop/wm/preferences/titlebar-font"
-    value: "Cantarell Bold 12"
+    value: "'Cantarell Bold 12'"
     state: present
   tags:
     - gnome
