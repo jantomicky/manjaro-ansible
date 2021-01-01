@@ -104,7 +104,7 @@
   become: yes
   dconf:
     key: "/org/gnome/desktop/interface/gtk-theme"
-    value: "'Adwaita-maia-dark'"
+    value: "'Adwaita'"
     state: present
   tags:
     - gnome
@@ -116,7 +116,7 @@
   become: yes
   dconf:
     key: "/org/gnome/desktop/interface/icon-theme"
-    value: "'Papirus-Dark-Maia'"
+    value: "'Papirus'"
     state: present
   tags:
     - gnome
