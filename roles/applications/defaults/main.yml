@@ -2,7 +2,7 @@ applications_present:
   - firefox
   - bitwarden
   - caprine
-  - evolution
+  - geary
   - virtualbox
   - linux510-virtualbox-host-modules
   - linux510-virtualbox-guest-modules
@@ -21,7 +21,6 @@ applications_present:
   - steam-manjaro
 
 applications_absent:
-  - geary
   - glade
   - transmission-gtk
 
