@@ -8,9 +8,11 @@ packages_present:
   - neofetch
   - dnsmasq
   - base-devel
+  - gamemode
+  - adwaita-qt
+  - papirus-icon-theme
   - ttf-fira-code
-  - adwaita-maia
-  - wallpapers-juhraya
+  - gnome-shell-extension-appindicator
 
 packages_absent:
   - manjaro-ranger-settings
@@ -24,7 +26,17 @@ packages_absent:
   - ranger
   - pamac-snap-plugin
   - pamac-flatpak-plugin
+  - manjaro-gdm-branding
+  - manjaro-gdm-theme
+  - manjaro-gnome-assets
+  - adwaita-maia
+  - matcha-gtk-theme
+  - kvantum-theme-matchama
+  - xcursor-breeze
+  - papirus-maia-icon-theme
   - wallpapers-2018
+  - gnome-wallpapers
+  - manjaro-wallpapers-18.0
 
 vagrant_plugins:
   - vagrant-bindfs
