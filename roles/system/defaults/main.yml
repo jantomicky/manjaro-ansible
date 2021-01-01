@@ -26,9 +26,9 @@ packages_absent:
   - ranger
   - pamac-snap-plugin
   - pamac-flatpak-plugin
+  - manjaro-gnome-assets
   - manjaro-gdm-branding
   - manjaro-gdm-theme
-  - manjaro-gnome-assets
   - adwaita-maia
   - matcha-gtk-theme
   - kvantum-theme-matchama
